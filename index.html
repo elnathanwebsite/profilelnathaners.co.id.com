@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5;
+        }
+
+        .profile-container {
+            width: 365px;
+            margin: 20px auto;
+            background-color: rgb(255, 255, 255);
+            border: 1px solid #ddd;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .header {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-info {
+            display: flex;
+            align-items: center;
+            padding: 1px;
+            margin-top: -200px;
+        }
+
+        .profile-image {
+            width: 100px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        .profile-details h2 {
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+
+        .profile-details p {
+            color: #555;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+
+        .verified-icon {
+            color: #ffffff;
+            font-size: 14px;
+            margin-left: 5px;
+        }
+
+        .edit-profile {
+            margin-left: auto;
+            padding: 8px 10px;
+            background-color: white;
+            border: 1px solid #3a3a3a;
+            border-radius: 19px;
+            color: #333333;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .edit-profile:hover {
+            background-color: #e8f5fd;
+        }
+
+        .profile-stats {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+            font-weight: bold;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            padding: 1px;
+            font-weight: bold;
+            font-weight: 700;
+        }
+
+        .tab {
+            background: none;
+            border: none;
+            font-size: 14px;
+            cursor: pointer;
+            color: #424242;
+        }
+
+        .who-to-follow {
+            padding: 10px;
+        }
+
+        .who-to-follow h3 {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .follow-suggestion {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f8f8f8;
+            border-radius: 8px;
+        }
+
+        .suggestion-content h4 {
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+
+        .suggestion-content p {
+            color: #555;
+            font-size: 12px;
+        }
+
+        .btn-follow {
+    padding: 10px 20px; /* Ukuran padding untuk tombol */
+    background-color: #039eff; /* Warna latar belakang tombol */
+    color: white; /* Warna teks tombol */
+    border: none; /* Menghilangkan border default */
+    border-radius: 11111px; /* Membuat sudut tombol melengkung */
+    cursor: pointer; /* Mengubah kursor menjadi pointer saat hover */
+    font-size: 13px; /* Ukuran font */
+    outline: none; /* Menghilangkan outline saat tombol di-klik */
+    transition: background-color 0.3s; /* Efek transisi saat hover */
+}
+.btn-follow:hover {
+    background-color: #ffffff; /* Warna latar belakang saat hover */
+}
+
+        /* Gaya untuk gambar dengan link */
+        .gambar-link {
+            width: 363px;
+            height: 450px;
+            border: 2px solid #0c0713;
+            margin-top: 20px;
+            /* Memberi jarak antara gambar dengan elemen lain */
+            transition: transform 0.3s ease;
+            /* Efek hover */
+        }
+
+        /* Efek ketika gambar dihover */
+        .gambar-link:hover {
+            transform: scale(1.1);
+            /* Membesarkan gambar sedikit saat dihover */
+        }
+
+
+
+
+
+
+
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+footer {
+    background-color: #0c0713;
+    color: #fff;
+    padding: 50px 0;
+    text-align: left;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    width: 22%;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.footer-section p, .footer-section ul, .footer-section li {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #ccc;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section li {
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    text-decoration: none;
+    color: #ccc;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: #fff;
+}
+
+.footer-section form {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-section input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 4px;
+    width: 80%;
+}
+
+.footer-section button {
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-top: 5px;
+    border-radius: 4px;
+}
+
+.footer-section button:hover {
+    background-color: #333;
+}
+
+.footer-bottom {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.social-icons {
+    margin-bottom: 20px;
+}
+
+.social-icons a {
+    margin: 0 10px;
+}
+
+.footer-bottom p {
+    color: #ccc;
+    font-size: 12px;
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="profile-container">
+        <div class="header">
+            <img src="https://i.pinimg.com/originals/8d/9c/78/8d9c785c5ed33ba22abc62f3e01d8690.jpg" alt="Header Image"
+                class="header-image">
+        </div>
+        <div class="profile-container">
+            <div class="header"></div>
+            <div class="profile-info">
+                <a href="https://i.pinimg.com/736x/b0/ea/b2/b0eab210789378c9bb0e3060e8a45c69.jpg">
+                    <img src="https://i.pinimg.com/736x/b0/ea/b2/b0eab210789378c9bb0e3060e8a45c69.jpg"
+                        alt="Profile Image" class="profile-image">
+                </a>
+                <div class="profile-details">
+                    <h2>Ethan El Nathan <span class="verified-icon"></span></h2>
+                    <p>@elnathaners</p>
+                    <p>Design And Web Dev</p>
+                    <p>Bergabung Juli 2023</p>
+                </div>
+                <button onclick="window.location.href='https://www.instagram.com/elnathaners?igsh=bW5kNHVrbWw3anZs'" class="btn-follow">Ikuti</button>
+
+
+            </div>
+            <div class="profile-stats">
+                <p>265JT Mengikuti</p>
+                <p>100M Pengikut</p>
+            </div>
+            <div class="tabs">
+                <a href="https://berandawebsiteelnathannew.vercel.app/?fbclid=PAZXh0bgNhZW0CMTEAAabfUL4jCaT52d2Cmbp639ZI0pCzzfQlCZQEkCM9RNnEfsmf0sU7vGOyrp8_aem_sahwhV8goCqBaiMvhPZs7w" class="tab">Profil</a>
+                <a href="https://vm.tiktok.com/ZS2skTgCs/" class="tab">Tik Tok</a>
+                <a href="https://elnathanshopinstagram.vercel.app/" class="tab">Shop</a>
+                <a href="https://journalandprojectstudy.vercel.app/" class="tab">Jurnal</a>
+                <a href="https://fortofolioelnathanpertama.vercel.app/" class="tab">Portofolio</a>
+                <a href="https://www.whatsapp.com/channel/0029VajhsimLikg0FtYlyZ0Q" class="tab">WhatsApp</a>
+            </div>
+            <!-- Gambar yang berisi tautan -->
+            <a href="https://i.pinimg.com/736x/3f/ab/03/3fab03b7c0429d8f94d9c6daa0b39a9d.jpg" target="_blank">
+                <img src="https://i.pinimg.com/736x/3f/ab/03/3fab03b7c0429d8f94d9c6daa0b39a9d.jpg" alt="Contoh Gambar"
+                    class="gambar-link">
+            </a>
+            <a href="https://i.pinimg.com/originals/57/56/b2/5756b26fb317c0518b1a77144762c729.jpg" target="_blank"></a>
+            <img src="https://i.pinimg.com/originals/57/56/b2/5756b26fb317c0518b1a77144762c729.jpg" alt="Contoh Gambar"
+                class="gambar-link">
+            </a>
+            <a href="https://i.pinimg.com/736x/2e/65/0b/2e650b5d5c4caeafb53f686ff53c5148.jpg" target="_blank"></a>
+            <img src="https://i.pinimg.com/736x/2e/65/0b/2e650b5d5c4caeafb53f686ff53c5148.jpg" alt="Contoh Gambar"
+                class="gambar-link">
+            </a>
+            <a href="https://i.pinimg.com/736x/31/2d/8f/312d8f05c53f42204d27783b12194879.jpg" target="_blank"></a>
+            <img src="https://i.pinimg.com/736x/31/2d/8f/312d8f05c53f42204d27783b12194879.jpg" alt="Contoh Gambar"
+                class="gambar-link">
+            </a>
+            <a href="https://i.pinimg.com/736x/f6/80/43/f680434368d3dd5741acdc67a6023759.jpg" target="_blank"></a>
+            <img src="https://i.pinimg.com/736x/f6/80/43/f680434368d3dd5741acdc67a6023759.jpg" alt="Contoh Gambar"
+                class="gambar-link">
+            </a>
+            <a href="https://i.pinimg.com/736x/10/38/bd/1038bdb2ab9609dc71ed0be4026f4915.jpg" target="_blank"></a>
+            <img src="https://i.pinimg.com/736x/10/38/bd/1038bdb2ab9609dc71ed0be4026f4915.jpg" alt="Contoh Gambar"
+                class="gambar-link">
+            </a>
+            <a href="https://i.pinimg.com/736x/df/e3/85/dfe38587165cf2ffdec3e087540db141.jpg" target="_blank"></a>
+            <img src="https://i.pinimg.com/736x/df/e3/85/dfe38587165cf2ffdec3e087540db141.jpg" alt="Contoh Gambar"
+                class="gambar-link">
+            </a>
+            <footer>
+                <div class="container">
+                    <div class="footer-sectio
+
+                    
+                    <div class="footer-section">
+                        <h3>Layanan</h3>
+                        <ul>
+                            <li><a href="#">Bantuan</a></li>
+                            
+                            
+                            
+                            <li><a href="#">Hubungi Kami</a></li>
+                            <li><a href="#">Brand di Elnathaners</a></li>
+                        </ul>
+                    </div>
+            
+                    <div class="footer-section">
+                        <h3>Tentang Kami</h3>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Karir</a></li>
+                            <li><a href="#">Kebijakan Privasi</a></li>
+                            <li><a href="#">Persyaratan & Ketentuan</a></li>
+                        </ul>
+                    </div>
+            
+                    <div class="footer-section">
+                        <h3>Anda Baru di ETH?</h3>
+                        <p>Dapatkan berita mode terbaru dan peluncuran produk hanya dengan subscribe newsletter kami.</p>
+                        <form>
+                            <input type="email" placeholder="Alamat email Kamu">
+                            <button type="submit">Wanita</button>
+                            <button type="submit">Pria</button>
+                        </form>
+                    </div>
+                </div>
+            
+                <div class="footer-bottom">
+                    <div class="social-icons">
+                       
+                    <p>&copy; 2024 ELNATHANERS. All Rights Reserved.</p>
+                </div>
+            </footer>
+            
+</body>
+
+</html>
